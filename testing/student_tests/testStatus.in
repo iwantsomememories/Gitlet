@@ -1,0 +1,47 @@
+# Check if status works properly
+I definitions.inc
+I commit_setup.inc
+> branch other-branch
+<<<
++ wug.txt wug.txt
++ wug2.txt wug2.txt
++ wug3.txt wug3.txt
++ goodbye.txt goodbye.txt
++ junk.txt junk.txt
++ untracked.txt untracked.txt
+> add wug3.txt
+<<<
+> add goodbye.txt
+<<<
+> add junk.txt
+<<<
+> commit "Add wug3, goodbye and junk"
+<<<
+> add wug.txt
+<<<
+> add wug2.txt
+<<<
+> rm goodbye.txt
+<<<
+- junk.txt
++ wug3.txt notwug.txt
+> status
+=== Branches ===
+*master
+other-branch
+
+=== Staged Files ===
+wug.txt
+wug2.txt
+
+=== Removed Files ===
+goodbye.txt
+
+=== Modifications Not Staged For Commit ===
+junk.txt (deleted)
+wug3.txt (modified)
+
+=== Untracked Files ===
+untracked.txt
+
+<<<
